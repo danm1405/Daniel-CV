@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  body {
+    background-color: #003B4F;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+  }
+
+  section {
+    scroll-margin-top: 75px;
+  }
+}
+
+/* Blinking typing cursor */
+@keyframes cursorBlink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: cursorBlink 0.9s infinite;
+}
+
+/* Dual-tone cinematic lighting for portrait */
+.hero-portrait-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-portrait-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 55%;
+  height: 80%;
+  background: radial-gradient(ellipse at center, rgba(0, 212, 198, 0.45) 0%, rgba(0, 212, 198, 0) 70%);
+  filter: blur(28px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-portrait-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 5%;
+  right: 15%;
+  width: 60%;
+  height: 75%;
+  background: radial-gradient(ellipse at center, rgba(226, 74, 104, 0.4) 0%, rgba(226, 74, 104, 0) 70%);
+  filter: blur(35px);
+  mix-blend-mode: color-dodge;
+  pointer-events: none;
+  z-index: 1;
+}
